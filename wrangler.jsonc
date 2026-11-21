@@ -1,0 +1,8 @@
+{
+  // "name" must match the Worker name in Cloudflare (prompts.motionview.workers.dev).
+  "name": "prompts",
+  "compatibility_date": "2025-09-01",
+  "assets": {
+    "directory": "./public"
+  }
+}

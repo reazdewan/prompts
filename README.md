@@ -3,13 +3,15 @@
 2,288 free AI prompts in 25 categories, with search, fill-in blanks, copy, save,
 and open in ChatGPT or Claude. Subscribe buttons go to https://motionview.beehiiv.com/subscribe.
 
-- `index.html`: the whole site (prompts, styles and code are all in this one file).
-- `_headers`: security headers and no-cache, so updates show on a normal reload.
+- `public/index.html`: the whole site (prompts, styles and code are all in this one file).
+- `public/_headers`: security headers and no-cache, so updates show on a normal reload.
+- `wrangler.jsonc`: Cloudflare Worker settings (Worker name `prompts`, serves the `public` folder).
 
 ## Hosting
 
-Cloudflare Pages, connected to this repo. Every push to `main` goes live in about a minute.
-Build settings: framework preset **None**, build command **empty**, output directory **/**.
+Cloudflare Worker `prompts` (https://prompts.motionview.workers.dev), connected to this repo.
+Every push to `main` goes live in about a minute.
+Build settings: build command **empty**, deploy command **npx wrangler deploy**, root directory **/**.
 
 ## Prompt sources
 
