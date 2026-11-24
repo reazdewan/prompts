@@ -46,6 +46,8 @@
         "title": "Quick fix prompt",
         "text": "Review this email against these rules: specific to one buyer, one reason, one question, under 90 words, no buzzwords. Tell me what fails and rewrite only those parts."
       }
-    ]
+    ],
+    "tag": "Sales prompts",
+    "added": "2026-11-24"
   }
 ]

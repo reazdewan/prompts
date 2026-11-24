@@ -30,3 +30,9 @@ Build settings: build command **empty**, deploy command **npx wrangler deploy**,
   `{"slug":"ai-prompts","title":"1500 AI Prompts","description":"One line.","file":"ai-prompts.pdf","cover":"/library/covers/ai-prompts.jpg"}` (`cover` is optional).
 - `src/worker.js` only serves `/books/*` to the reader page (`/library/read.html`). Direct links get a "read it in the Library" page.
 - Readers can't download, print or right-click from the reader. Screenshots can't be blocked by any website.
+
+## Site layout (app shell)
+
+- Sidebar and top search come from `public/assets/shell.css` and `public/assets/shell.js`.
+- Pages: `/` Prompt library, `/library/` Library, `/library/read.html` reader, `/skills/` and `/ai-tools/` (coming soon).
+- Book fields in `books.json`: `slug`, `title`, `description`, `file`, `cover`, `tag`, `added` (YYYY-MM-DD), `prompts` (page, title, text).

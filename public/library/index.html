@@ -3,59 +3,113 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Free AI guides and eBooks from Motion View. Read them online, right in your browser.">
+<meta name="description" content="Free AI guides and playbooks from Motion View. Read them online and copy every prompt.">
 <title>Motion View Library</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20viewBox='0%200%2030%2030'%20xmlns='http://www.w3.org/2000/svg'%3E%3Crect%20x='1.5'%20y='1.5'%20width='27'%20height='27'%20rx='5'%20fill='%230F2240'/%3E%3Crect%20x='12'%20y='12'%20width='6'%20height='6'%20rx='1.5'%20fill='%23F5A623'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
-<link rel="stylesheet" href="/library/library.css?v=2">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20viewBox='0%200%2030%2030'%20xmlns='http://www.w3.org/2000/svg'%3E%3Crect%20x='1.5'%20y='1.5'%20width='27'%20height='27'%20rx='5'%20fill='%230F2240'/%3E%3Crect%20x='12'%20y='12'%20width='6'%20height='6'%20rx='1.5'%20fill='%23F5A623'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/assets/shell.css?v=1">
 </head>
 <body>
-<header>
-  <div class="wrap nav">
-    <a class="logo" href="/" aria-label="Motion View home"><svg class="mk" viewBox="0 0 30 30" aria-hidden="true"><rect x="1.5" y="1.5" width="27" height="27" rx="5" fill="#0F2240"/><rect x="7" y="7" width="16" height="16" rx="3" fill="none" stroke="#8FB2E6" stroke-width="1.5"/><rect x="12" y="12" width="6" height="6" rx="1.5" fill="#F5A623"/></svg></a>
-    <nav class="navr">
-      <a class="navlink" href="/library/" aria-current="page">Library</a>
-      <a class="btn" id="join-top">Join free <span class="arr">›</span></a>
-    </nav>
+<aside class="side" id="side" aria-label="Main menu">
+  <div class="side-top"><a class="brand" href="/library/" aria-label="Motion View home"><svg viewBox="0 0 30 30" aria-hidden="true"><rect x="1.5" y="1.5" width="27" height="27" rx="5" fill="#1B3257" stroke="#2E4A75"/><rect x="7" y="7" width="16" height="16" rx="3" fill="none" stroke="#8FB2E6" stroke-width="1.5"/><rect x="12" y="12" width="6" height="6" rx="1.5" fill="#F5A623"/></svg></a><button class="side-x" id="side-x" type="button" aria-label="Close menu">✕</button></div>
+  <nav class="side-nav">
+    <a class="si" href="/library/" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8.5 3v18M12 8h4.5"/></svg>Library</a>
+    <a class="si" href="/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l1.9 5.6 5.6 1.9-5.6 1.9-1.9 5.6-1.9-5.6-5.6-1.9 5.6-1.9z"/></svg>Prompt library</a>
+    <a class="si" href="/skills/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5 4.5 14h6.8l-1 7.5 8.7-11.5h-6.8z"/></svg>Skills<span class="soon">Soon</span></a>
+    <a class="si" href="/ai-tools/"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><path d="M17 13.5v7M13.5 17h7"/></svg>AI Tools<span class="soon">Soon</span></a>
+    <p class="side-h">Your library</p>
+    <a class="si" href="/library/#continue"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5h11v17l-5.5-3.6-5.5 3.6z"/></svg>Continue reading</a>
+    <a class="si" href="/#favs"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg>Saved prompts</a>
+  </nav>
+</aside>
+<div class="scrim" id="scrim" hidden></div>
+<div class="main">
+  <div class="topbar">
+    <button class="menu" id="menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="side"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <a class="brand-m" href="/library/" aria-label="Motion View home"><svg viewBox="0 0 30 30" aria-hidden="true"><rect x="1.5" y="1.5" width="27" height="27" rx="5" fill="#0F2240"/><rect x="7" y="7" width="16" height="16" rx="3" fill="none" stroke="#8FB2E6" stroke-width="1.5"/><rect x="12" y="12" width="6" height="6" rx="1.5" fill="#F5A623"/></svg></a>
+    <form class="tsearch" id="tsearch" action="/" method="get" role="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <label for="q" style="position:absolute;left:-9999px">Search</label>
+      <input id="q" name="q" type="search" placeholder='Search books, like &quot;sales&quot;' autocomplete="off">
+      <kbd>/</kbd>
+    </form>
   </div>
-</header>
-
-<main class="wrap">
-  <section class="hero">
-    <span class="sticker">Free to read</span>
-    <h1>The Motion View Library</h1>
-    <p class="lede">Practical AI guides and eBooks. Open any book and read it right here in your browser.</p>
-  </section>
-  <section class="shelf" id="shelf" aria-live="polite"></section>
-</main>
-
-<footer>Motion View · <a href="/">Prompts</a> · <a href="/library/">Library</a></footer>
-
+  <main class="content">
+    <p class="eyebrow">Motion View Library</p>
+    <h1 class="page-h">The Motion View Library</h1>
+    <p class="page-sub">Guides, prompts and playbooks from Motion View, written to be used at work. Read them here and copy any prompt in one click.</p>
+    <hr class="rule">
+    <div class="tabs" role="group" aria-label="Sort books">
+      <button class="tab" type="button" data-sort="all" aria-pressed="true"><span class="dot"></span><span><b>Browse</b><small>Everything</small></span></button>
+      <button class="tab" type="button" data-sort="latest" aria-pressed="false"><span class="dot"></span><span><b>Latest</b><small>Freshly added</small></span></button>
+    </div>
+    <hr class="rule">
+    <section id="continue" hidden>
+      <h2 class="sec-h" style="margin-top:0">Continue reading</h2>
+      <div class="cont" id="cont"></div>
+    </section>
+    <h2 class="sec-h" id="shelf-h">All books</h2>
+    <div class="shelf" id="shelf" aria-live="polite"></div>
+  </main>
+</div>
+<script src="/assets/shell.js?v=1"></script>
 <script>
-const JOIN_URL = ""; // Same as the home page: add the newsletter signup link here when it goes live.
-if (JOIN_URL) document.getElementById("join-top").href = JOIN_URL;
+(function () {
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+  const shelf = document.getElementById("shelf"), q = document.getElementById("q");
+  let books = [], sort = "all", query = "";
+  let reading = {};
+  try { reading = JSON.parse(localStorage.getItem("mv-reading") || "{}"); } catch (e) {}
+  const url = b => "/library/read.html?book=" + encodeURIComponent(b.slug);
 
-const shelf = document.getElementById("shelf");
-const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
-
-fetch("/library/books.json", {cache: "no-store"})
-  .then(r => r.json())
-  .then(books => {
-    if (!books.length) {
-      shelf.innerHTML = '<div class="empty"><h3>New books are coming soon</h3><p>The first guides are being added to the Library.</p></div>';
-      return;
-    }
-    shelf.innerHTML = books.map(b => `
-      <a class="book" href="/library/read.html?book=${encodeURIComponent(b.slug)}">
-        <div class="cover">${b.cover ? `<img src="${esc(b.cover)}" alt="" loading="lazy">` : `<span class="k">Motion View</span><span class="t">${esc(b.title)}</span><span class="bar"></span>`}</div>
+  function cover(b) {
+    return b.cover ? `<img src="${esc(b.cover)}" alt="" loading="lazy">` : `<span class="gen"><b>${esc(b.title)}</b><i></i></span>`;
+  }
+  function renderContinue() {
+    const list = books.filter(b => reading[b.slug]).sort((a, z) => (reading[z.slug].t || 0) - (reading[a.slug].t || 0)).slice(0, 4);
+    document.getElementById("continue").hidden = !list.length;
+    document.getElementById("cont").innerHTML = list.map(b => {
+      const r = reading[b.slug], pct = Math.round(100 * r.page / Math.max(1, r.total));
+      return `<a class="ccard" href="${url(b)}&page=${r.page}">${b.cover ? `<img src="${esc(b.cover)}" alt="">` : `<span class="cc-ph"></span>`}
+        <span><h3>${esc(b.title)}</h3><p>Page ${r.page} of ${r.total}</p><div class="prog"><i style="width:${pct}%"></i></div></span></a>`;
+    }).join("");
+  }
+  function matches(b) {
+    if (!query) return true;
+    const hay = (b.title + " " + (b.description || "") + " " + (b.tag || "") + " " + (b.prompts || []).map(p => p.title).join(" ")).toLowerCase();
+    return query.split(/\s+/).every(w => hay.includes(w));
+  }
+  function renderShelf() {
+    let list = books.filter(matches);
+    if (sort === "latest") list = list.slice().sort((a, z) => String(z.added || "").localeCompare(String(a.added || "")));
+    document.getElementById("shelf-h").textContent = query ? `Books matching "${q.value.trim()}"` : sort === "latest" ? "Freshly added" : "All books";
+    if (!books.length) { shelf.innerHTML = '<div class="empty"><h3>New books are coming soon</h3><p>The first guides are being added to the Library.</p></div>'; return; }
+    if (!list.length) { shelf.innerHTML = `<div class="empty"><h3>No books match your search</h3><p>Press Enter to search the prompt library instead.</p></div>`; return; }
+    shelf.innerHTML = list.map(b => `
+      <a class="bk" href="${url(b)}">
+        <span class="cov">${cover(b)}</span>
+        <span class="tg">${esc(b.tag || "Motion View")}</span>
         <h3>${esc(b.title)}</h3>
         ${b.description ? `<p>${esc(b.description)}</p>` : ""}
-        <span class="go">Read now ›</span>
       </a>`).join("");
-  })
-  .catch(() => { shelf.innerHTML = '<div class="empty"><h3>The Library could not load</h3><p>Please refresh the page.</p></div>'; });
+  }
+  document.querySelectorAll(".tab").forEach(t => t.addEventListener("click", () => {
+    sort = t.dataset.sort;
+    document.querySelectorAll(".tab").forEach(x => x.setAttribute("aria-pressed", x === t));
+    renderShelf();
+  }));
+  q.addEventListener("input", () => { query = q.value.trim().toLowerCase(); renderShelf(); });
+  document.getElementById("tsearch").addEventListener("submit", e => {
+    if (books.some(matches) && query) e.preventDefault();
+  });
+
+  fetch("/library/books.json", {cache: "no-store"})
+    .then(r => r.json())
+    .then(list => { books = list; renderContinue(); renderShelf(); if (location.hash === "#continue") document.getElementById("continue").scrollIntoView(); })
+    .catch(() => { shelf.innerHTML = '<div class="empty"><h3>The Library could not load</h3><p>Please refresh the page.</p></div>'; });
+})();
 </script>
 </body>
 </html>

@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="/library/library.css?v=2">
 <style>
 /* Reader: sticky bar with back link, title, page counter and zoom; pages drawn as images below. */
+html{scroll-padding-top:74px}
 body{background:#E6ECF3}
 .bar{position:sticky;top:0;z-index:10;background:var(--ink);color:#fff;box-shadow:0 6px 18px -10px rgba(15,34,64,.6)}
 .bar .wrap{display:flex;align-items:center;gap:12px;min-height:58px;padding-block:8px}
@@ -23,7 +24,7 @@ body{background:#E6ECF3}
 .ctl button:hover{background:rgba(255,255,255,.12)}
 .pg{font-weight:700;font-size:13px;color:#C9D6EA;white-space:nowrap;min-width:64px;text-align:center}
 @media (max-width:560px){.ttl{display:none}.bar .wrap{justify-content:space-between}}
-.pages{display:grid;justify-items:center;gap:18px;padding:24px 12px 60px}
+.pages{scroll-margin-top:70px;display:grid;justify-items:center;gap:18px;padding:24px 12px 60px}
 .page{position:relative;background:#fff;box-shadow:0 10px 30px -18px rgba(15,34,64,.55);border-radius:4px;overflow:hidden;max-width:100%}
 .page canvas{display:block;width:100%;height:auto}
 .page .shield{position:absolute;inset:0}
@@ -122,6 +123,21 @@ body{background:#E6ECF3}
     size();
     pageViews.forEach(b => { io.observe(b); seen.observe(b); });
     pgEl.textContent = `1 / ${total}`;
+    const start = parseInt(new URLSearchParams(location.search).get("page"), 10);
+    if (start > 1 && start <= total) requestAnimationFrame(() => pageViews[start - 1].scrollIntoView({block: "start"}));
+  }
+
+  // Remember where the reader stopped, for "Continue reading" in the Library.
+  let saveT;
+  function saveProgress(n) {
+    clearTimeout(saveT);
+    saveT = setTimeout(() => {
+      try {
+        const all = JSON.parse(localStorage.getItem("mv-reading") || "{}");
+        all[slug] = {page: n, total, t: Date.now()};
+        localStorage.setItem("mv-reading", JSON.stringify(all));
+      } catch (e) {}
+    }, 400);
   }
 
   function size() {
@@ -159,7 +175,7 @@ body{background:#E6ECF3}
   }, {rootMargin: "800px 0px"});
 
   const seen = new IntersectionObserver(entries => {
-    entries.forEach(en => { if (en.isIntersecting) pgEl.textContent = `${en.target.dataset.n} / ${total}`; });
+    entries.forEach(en => { if (en.isIntersecting) { pgEl.textContent = `${en.target.dataset.n} / ${total}`; saveProgress(+en.target.dataset.n); } });
   }, {rootMargin: "-45% 0px -45% 0px"});
 
   async function draw(box) {
