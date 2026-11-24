@@ -138,7 +138,7 @@ a.btn:not([href]):hover{transform:none;box-shadow:none}
 .navlink:hover{background:var(--cream)}
 @media (max-width:420px){.logo .word{font-size:18px}.navlink{padding:10px 8px}.navr .btn{padding:11px 13px}.navr .btn .arr{display:none}}
 </style>
-<link rel="stylesheet" href="/assets/shell.css?v=1">
+<link rel="stylesheet" href="/assets/shell.css?v=2">
 <style>
 /* Prompt library inside the app shell */
 .content .wrap{max-width:none;padding-inline:0;margin:0}
@@ -189,7 +189,7 @@ a.btn:not([href]):hover{transform:none;box-shadow:none}
     <form class="tsearch" id="tsearch" action="/" method="get" role="search">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
       <label for="q" style="position:absolute;left:-9999px">Search</label>
-      <input id="q" name="q" type="search" placeholder='Search anything, like &quot;cold email&quot; or &quot;budget&quot;' autocomplete="off">
+      <input id="q" name="q" type="search" placeholder='Search prompts, like &quot;cold email&quot;' autocomplete="off">
       <kbd>/</kbd>
     </form>
   </div>
@@ -393,5 +393,6 @@ if(h && (catName[h] || h==="favs")) cat=h;
 renderCats(); render();
 </script>
 
+<script src="/assets/shell.js?v=2"></script>
 </body>
 </html>
