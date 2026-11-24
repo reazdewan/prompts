@@ -4,6 +4,48 @@
     "title": "7 Prompts for Your Sales Day",
     "description": "Ready-to-use AI prompts for sales research, outreach, follow-ups and call prep.",
     "file": "7-prompts-for-your-sales-day.pdf",
-    "cover": "/library/covers/7-prompts-for-your-sales-day.jpg"
+    "cover": "/library/covers/7-prompts-for-your-sales-day.jpg",
+    "prompts": [
+      {
+        "page": 6,
+        "title": "Prompt 1 · A new account",
+        "text": "I'm researching [Company] before reaching out to [Name, Title].\n\nHere is everything I found:\n[paste: website about page, recent news, earnings quotes, job posts, their LinkedIn posts]\n\nWhat I sell: [one sentence, the problem you solve]\n\nGive me an account brief:\n1. What the company does, in one line\n2. The 3 priorities this person likely has this quarter, each tied to a source above\n3. Which priority my product connects to, and why\n4. One thing I should NOT mention\nFlag anything you are guessing."
+      },
+      {
+        "page": 8,
+        "title": "Prompt 2 · The first email",
+        "text": "Using the account brief above, write a first email to [Name].\n\nRules:\n- Under 90 words\n- Open with the specific thing I noticed: [trigger, e.g. their Q2 comment on late deliveries]\n- One reason I'm reaching out now\n- End with one easy question, not a meeting request\n- No \"I hope this finds you well\", no buzzwords\n- Write like a peer, plain and direct\n\nGive me 3 subject lines under 5 words, and 2 versions of the body: one direct, one curious."
+      },
+      {
+        "page": 10,
+        "title": "Prompt 3 · A LinkedIn connection",
+        "text": "Write a LinkedIn connection note to [Name, Title at Company].\n\nWhat we have in common:\n[shared group, mutual connection, a post of theirs I liked, same event, same former company]\n\nTheir recent post or activity:\n[paste it]\n\nRules:\n- Under 280 characters\n- Mention the common ground or their post specifically\n- No pitch, no product, no meeting ask\n- Sound like a person, not a recruiter\n\nGive me 3 options."
+      },
+      {
+        "page": 12,
+        "title": "Prompt 4 · No reply yet",
+        "text": "[Name] hasn't replied to my email from [date]. Here is what I sent:\n[paste previous email]\n\nWrite follow-up #[2 / 3 / 4]. It must add one new thing, such as:\n- A relevant insight or stat about their industry\n- A short example of how a similar company handled this\n- A new angle on the same problem\n- A useful resource with no strings attached\n\nRules: under 70 words, no guilt (\"just following up\", \"circling back\"), new subject line, end with a simple question."
+      },
+      {
+        "page": 14,
+        "title": "Prompt 5 · Prepare the call",
+        "text": "I have a [30] minute discovery call with [Name, Title] at [Company] on [date].\n\nUse the account brief and our email thread above.\n\nGive me:\n1. A simple agenda I can share at the start (3 points)\n2. 8 discovery questions, ordered from easy to deep, about their situation, not my product\n3. The 3 things most likely to stall this deal\n4. What a good next step looks like at the end of this call\n5. One sentence opener that references what they told me by email"
+      },
+      {
+        "page": 16,
+        "title": "Prompt 6 · Rehearse the call",
+        "text": "Role play as [Name, Title at Company]. Use everything in this chat to stay in character.\n\nBe a realistic, slightly skeptical buyer. Push back with the objections they would actually raise, such as [budget / timing / we already use X / need to loop in IT].\n\nRules:\n- Keep each reply short, like a real call\n- Don't make it easy. If my answer is weak, push harder\n- After 6 exchanges, step out of character and score me on: clarity, listening, handling objections and securing a next step\n- Give me one better line for each answer I struggled with\n\nI'll start: \"[your opening line]\""
+      },
+      {
+        "page": 18,
+        "title": "Prompt 7 · Recap the call",
+        "text": "Here are my rough notes from the call with [Name]:\n[paste notes or transcript]\n\nWrite a recap email that:\n1. Thanks them in one line, no fluff\n2. Summarizes their situation in their own words (3 bullets max)\n3. Lists what we agreed as next steps, with owners and dates\n4. Ends with a question to confirm I got it right\n\nThen, separately, give me:\n- A 3 line CRM note\n- Any open questions or risks I should chase"
+      },
+      {
+        "page": 21,
+        "title": "Quick fix prompt",
+        "text": "Review this email against these rules: specific to one buyer, one reason, one question, under 90 words, no buzzwords. Tell me what fails and rewrite only those parts."
+      }
+    ]
   }
 ]
