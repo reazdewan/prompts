@@ -133,6 +133,10 @@ footer a{text-decoration:underline}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 a#join-top:not([href]),a#join-band:not([href]),a#join-foot:not([href]){cursor:default}
 a.btn:not([href]):hover{transform:none;box-shadow:none}
+.navr{display:flex;align-items:center;gap:6px}
+.navlink{font-weight:700;font-size:15px;padding:10px 14px;border-radius:10px}
+.navlink:hover{background:var(--cream)}
+@media (max-width:420px){.logo .word{font-size:18px}.navlink{padding:10px 8px}.navr .btn{padding:11px 13px}.navr .btn .arr{display:none}}
 </style>
 </head>
 <body>
@@ -141,7 +145,10 @@ a.btn:not([href]):hover{transform:none;box-shadow:none}
 <header>
   <div class="wrap nav">
     <a class="logo" href="#all" aria-label="Motion View Prompt Directory home"><svg class="mk" viewBox="0 0 30 30" aria-hidden="true"><rect x="1.5" y="1.5" width="27" height="27" rx="5" fill="#0F2240"/><rect x="7" y="7" width="16" height="16" rx="3" fill="none" stroke="#8FB2E6" stroke-width="1.5"/><rect x="12" y="12" width="6" height="6" rx="1.5" fill="#F5A623"/></svg><span class="word">Motion View</span></a>
-    <a class="btn" id="join-top">Join free <span class="arr">›</span></a>
+    <nav class="navr">
+      <a class="navlink" href="/library/">Library</a>
+      <a class="btn" id="join-top">Join free <span class="arr">›</span></a>
+    </nav>
   </div>
 </header>
 
@@ -174,7 +181,7 @@ a.btn:not([href]):hover{transform:none;box-shadow:none}
   </div>
 </main>
 
-<footer>Motion View · Prompt Directory · <a id="join-foot">Subscribe to the newsletter</a></footer>
+<footer>Motion View · <a href="/library/">Library</a> · <a id="join-foot">Subscribe to the newsletter</a></footer>
 
 <div class="overlay" id="overlay" hidden>
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="m-title">

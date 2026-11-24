@@ -22,3 +22,11 @@ Build settings: build command **empty**, deploy command **npx wrangler deploy**,
   trademark references), de-duplicated against the existing set, given [BRACKET] fill-ins,
   and sorted into categories. New categories: Health and Fitness, Travel and Lifestyle,
   Fun and Games, Ask an Expert, AI Image Prompts.
+
+## Library (read-only PDFs)
+
+- Put PDFs in `public/books/`.
+- Add each book to `public/library/books.json`:
+  `{"slug":"ai-prompts","title":"1500 AI Prompts","description":"One line.","file":"ai-prompts.pdf","cover":"/library/covers/ai-prompts.jpg"}` (`cover` is optional).
+- `src/worker.js` only serves `/books/*` to the reader page (`/library/read.html`). Direct links get a "read it in the Library" page.
+- Readers can't download, print or right-click from the reader. Screenshots can't be blocked by any website.

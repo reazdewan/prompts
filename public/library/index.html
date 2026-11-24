@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Free AI guides and eBooks from Motion View. Read them online, right in your browser.">
+<title>Motion View Library</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20viewBox='0%200%2030%2030'%20xmlns='http://www.w3.org/2000/svg'%3E%3Crect%20x='1.5'%20y='1.5'%20width='27'%20height='27'%20rx='5'%20fill='%230F2240'/%3E%3Crect%20x='12'%20y='12'%20width='6'%20height='6'%20rx='1.5'%20fill='%23F5A623'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
+<link rel="stylesheet" href="/library/library.css?v=1">
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/" aria-label="Motion View home"><svg class="mk" viewBox="0 0 30 30" aria-hidden="true"><rect x="1.5" y="1.5" width="27" height="27" rx="5" fill="#0F2240"/><rect x="7" y="7" width="16" height="16" rx="3" fill="none" stroke="#8FB2E6" stroke-width="1.5"/><rect x="12" y="12" width="6" height="6" rx="1.5" fill="#F5A623"/></svg><span class="word">Motion View</span></a>
+    <nav class="navr">
+      <a class="navlink" href="/library/" aria-current="page">Library</a>
+      <a class="btn" id="join-top">Join free <span class="arr">›</span></a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <span class="sticker">Free to read</span>
+    <h1>The Motion View Library</h1>
+    <p class="lede">Practical AI guides and eBooks. Open any book and read it right here in your browser.</p>
+  </section>
+  <section class="shelf" id="shelf" aria-live="polite"></section>
+</main>
+
+<footer>Motion View · <a href="/">Prompts</a> · <a href="/library/">Library</a></footer>
+
+<script>
+const JOIN_URL = ""; // Same as the home page: add the newsletter signup link here when it goes live.
+if (JOIN_URL) document.getElementById("join-top").href = JOIN_URL;
+
+const shelf = document.getElementById("shelf");
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+
+fetch("/library/books.json", {cache: "no-store"})
+  .then(r => r.json())
+  .then(books => {
+    if (!books.length) {
+      shelf.innerHTML = '<div class="empty"><h3>New books are coming soon</h3><p>The first guides are being added to the Library.</p></div>';
+      return;
+    }
+    shelf.innerHTML = books.map(b => `
+      <a class="book" href="/library/read.html?book=${encodeURIComponent(b.slug)}">
+        <div class="cover">${b.cover ? `<img src="${esc(b.cover)}" alt="" loading="lazy">` : `<span class="k">Motion View</span><span class="t">${esc(b.title)}</span><span class="bar"></span>`}</div>
+        <h3>${esc(b.title)}</h3>
+        ${b.description ? `<p>${esc(b.description)}</p>` : ""}
+        <span class="go">Read now ›</span>
+      </a>`).join("");
+  })
+  .catch(() => { shelf.innerHTML = '<div class="empty"><h3>The Library could not load</h3><p>Please refresh the page.</p></div>'; });
+</script>
+</body>
+</html>

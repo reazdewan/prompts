@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Reading | Motion View Library</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20viewBox='0%200%2030%2030'%20xmlns='http://www.w3.org/2000/svg'%3E%3Crect%20x='1.5'%20y='1.5'%20width='27'%20height='27'%20rx='5'%20fill='%230F2240'/%3E%3Crect%20x='12'%20y='12'%20width='6'%20height='6'%20rx='1.5'%20fill='%23F5A623'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
+<link rel="stylesheet" href="/library/library.css?v=1">
+<style>
+/* Reader: sticky bar with back link, title, page counter and zoom; pages drawn as images below. */
+body{background:#E6ECF3}
+.bar{position:sticky;top:0;z-index:10;background:var(--ink);color:#fff;box-shadow:0 6px 18px -10px rgba(15,34,64,.6)}
+.bar .wrap{display:flex;align-items:center;gap:12px;min-height:58px;padding-block:8px}
+.back{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:14px;padding:8px 12px;border-radius:10px;background:rgba(255,255,255,.1);white-space:nowrap}
+.back:hover{background:rgba(255,255,255,.18)}
+.ttl{flex:1;min-width:0;font-weight:700;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ctl{display:flex;align-items:center;gap:6px}
+.ctl button{width:36px;height:36px;border-radius:9px;border:1px solid rgba(255,255,255,.25);background:transparent;color:#fff;font:700 18px/1 var(--font);cursor:pointer}
+.ctl button:hover{background:rgba(255,255,255,.12)}
+.pg{font-weight:700;font-size:13px;color:#C9D6EA;white-space:nowrap;min-width:64px;text-align:center}
+@media (max-width:560px){.ttl{display:none}.bar .wrap{justify-content:space-between}}
+.pages{display:grid;justify-items:center;gap:18px;padding:24px 12px 60px}
+.page{position:relative;background:#fff;box-shadow:0 10px 30px -18px rgba(15,34,64,.55);border-radius:4px;overflow:hidden;max-width:100%}
+.page canvas{display:block;width:100%;height:auto}
+.page .shield{position:absolute;inset:0}
+.page .wm{position:absolute;right:12px;bottom:10px;font:700 11px var(--font);letter-spacing:.08em;color:rgba(15,34,64,.28);pointer-events:none}
+.state{text-align:center;padding:80px 20px;color:var(--muted);font-weight:600}
+.state h2{color:var(--ink);font-size:22px;margin-bottom:8px}
+.state a{text-decoration:underline;font-weight:700;color:var(--ink)}
+.pages,.page,.page canvas{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+@media print{body *{display:none!important}body::after{content:"This book can be read online at the Motion View Library.";display:block;padding:40px;font:16px Arial}}
+</style>
+</head>
+<body>
+<div class="bar">
+  <div class="wrap">
+    <a class="back" href="/library/">‹ Library</a>
+    <div class="ttl" id="ttl">Loading…</div>
+    <div class="ctl">
+      <button type="button" id="zout" aria-label="Zoom out">−</button>
+      <span class="pg" id="pg">–</span>
+      <button type="button" id="zin" aria-label="Zoom in">+</button>
+    </div>
+  </div>
+</div>
+<main class="pages" id="pages"><div class="state">Opening the book…</div></main>
+
+<script src="/library/vendor/pdf.min.js"></script>
+<script>
+(function () {
+  const pagesEl = document.getElementById("pages");
+  const ttlEl = document.getElementById("ttl");
+  const pgEl = document.getElementById("pg");
+  const slug = new URLSearchParams(location.search).get("book") || "";
+  const fail = (h, p) => { pagesEl.innerHTML = `<div class="state"><h2>${h}</h2><p>${p} <a href="/library/">Back to the Library</a></p></div>`; ttlEl.textContent = "Motion View Library"; };
+
+  // Read-only: no right-click, no dragging page images, no save or print shortcuts.
+  document.addEventListener("contextmenu", e => e.preventDefault());
+  document.addEventListener("dragstart", e => e.preventDefault());
+  document.addEventListener("keydown", e => {
+    const k = e.key.toLowerCase();
+    if ((e.ctrlKey || e.metaKey) && (k === "s" || k === "p")) e.preventDefault();
+  });
+
+  if (!window.pdfjsLib) return fail("The reader could not load", "Please check your connection and refresh.");
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "/library/vendor/pdf.worker.min.js";
+
+  let pdf, zoom = 1, pageViews = [], total = 0;
+
+  fetch("/library/books.json", {cache: "no-store"})
+    .then(r => r.json())
+    .then(books => {
+      const book = books.find(b => b.slug === slug);
+      if (!book) return fail("Book not found", "This book is not in the Library.");
+      document.title = `${book.title} | Motion View Library`;
+      ttlEl.textContent = book.title;
+      return pdfjsLib.getDocument({
+        url: "/books/" + encodeURIComponent(book.file),
+        httpHeaders: {"x-mv-reader": "1"},
+        withCredentials: false
+      }).promise.then(doc => { pdf = doc; total = doc.numPages; build(); });
+    })
+    .catch(() => fail("This book could not open", "Please refresh the page."));
+
+  // Make one placeholder per page, then draw each page only when it scrolls near the screen.
+  async function build() {
+    pagesEl.innerHTML = "";
+    const first = await pdf.getPage(1);
+    const base = first.getViewport({scale: 1});
+    pageViews = [];
+    for (let i = 1; i <= total; i++) {
+      const box = document.createElement("div");
+      box.className = "page";
+      box.dataset.n = i;
+      box.style.aspectRatio = `${base.width} / ${base.height}`;
+      box.innerHTML = '<div class="shield"></div><span class="wm">MOTION VIEW</span>';
+      pagesEl.appendChild(box);
+      pageViews.push(box);
+    }
+    size();
+    pageViews.forEach(b => { io.observe(b); seen.observe(b); });
+    pgEl.textContent = `1 / ${total}`;
+  }
+
+  function size() {
+    const w = Math.min(860 * zoom, pagesEl.clientWidth - 24);
+    pageViews.forEach(b => { b.style.width = w + "px"; });
+  }
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      const box = en.target;
+      if (en.isIntersecting) {
+        if (!box.dataset.drawn || box.dataset.drawn !== String(zoom)) draw(box);
+      }
+    });
+  }, {rootMargin: "800px 0px"});
+
+  const seen = new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting) pgEl.textContent = `${en.target.dataset.n} / ${total}`; });
+  }, {rootMargin: "-45% 0px -45% 0px"});
+
+  async function draw(box) {
+    const stamp = String(zoom);
+    box.dataset.drawn = stamp;
+    const page = await pdf.getPage(Number(box.dataset.n));
+    const cssW = box.clientWidth;
+    const v1 = page.getViewport({scale: 1});
+    const ratio = Math.min(window.devicePixelRatio || 1, 2);
+    const vp = page.getViewport({scale: (cssW / v1.width) * ratio});
+    const c = document.createElement("canvas");
+    c.width = Math.floor(vp.width); c.height = Math.floor(vp.height);
+    await page.render({canvasContext: c.getContext("2d"), viewport: vp}).promise;
+    if (box.dataset.drawn !== stamp) return;
+    const old = box.querySelector("canvas");
+    if (old) old.replaceWith(c); else box.prepend(c);
+  }
+
+  function rezoom(d) {
+    zoom = Math.max(0.6, Math.min(2, Math.round((zoom + d) * 10) / 10));
+    size();
+    pageViews.forEach(b => { const r = b.getBoundingClientRect(); if (r.bottom > -800 && r.top < innerHeight + 800) draw(b); });
+  }
+  document.getElementById("zin").onclick = () => rezoom(0.2);
+  document.getElementById("zout").onclick = () => rezoom(-0.2);
+  let t; addEventListener("resize", () => { clearTimeout(t); t = setTimeout(() => rezoom(0), 200); });
+})();
+</script>
+</body>
+</html>
