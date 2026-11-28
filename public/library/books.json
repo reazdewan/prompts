@@ -1,5 +1,188 @@
 [
   {
+    "slug": "20-chatgpt-5-prompts-for-problem-solving",
+    "title": "20 ChatGPT-5 Prompts for Problem Solving",
+    "description": "Twenty prompts that make AI run a proven method, like the 5 Whys or a pre-mortem, on your real problem.",
+    "file": "20-chatgpt-5-prompts-for-problem-solving.pdf",
+    "cover": "/library/covers/20-chatgpt-5-prompts-for-problem-solving.jpg",
+    "tag": "Problem solving",
+    "added": "2026-11-28",
+    "prompts": [
+      {
+        "page": 5,
+        "title": "1 · SWOT Analysis",
+        "text": "[Describe your situation in detail with background context.]\n\nRun a SWOT analysis for [business, product or project] in [industry or market]. List at least four specific points each for Strengths, Weaknesses, Opportunities and Threats. Then match them up: how can strengths capture opportunities, and which weaknesses make threats worse? End with the three moves that matter most.\n\n[Describe the output format you want, with an example.]"
+      },
+      {
+        "page": 5,
+        "title": "2 · Root Cause with the 5 Whys",
+        "text": "[Describe the problem in detail with background context.]\n\nI have a recurring issue in [area: operations, software, daily routine]. I've tried [what you tried] and it still happens. Walk me through the 5 Whys: start with the visible problem and keep asking \"why\" to reach the cause underneath. Summarise each layer and how it links to the one above. Finish with actions that fix the root cause, not just the symptoms.\n\n[Describe the output format you want, with an example.]"
+      },
+      {
+        "page": 6,
+        "title": "3 · Fishbone (Ishikawa) Cause Map",
+        "text": "[Describe the problem in detail with background context.]\n\nBuild a Fishbone diagram for [the problem]. Use six categories: People, Process, Equipment, Environment, Materials and Management. Give at least two specific, plausible root causes in every category. Show it as a text-based diagram, then name the three causes most worth investigating first and why.\n\n[Describe the output format you want, with an example.]"
+      },
+      {
+        "page": 6,
+        "title": "4 · Pareto 80/20 Analysis",
+        "text": "[Describe the situation in detail with background context.]\n\nHere is a list of issues and how often each occurs: [paste list or data]. Apply the Pareto principle. Rank the issues by impact, show the running share of the total, and identify the small group causing most of the damage. Recommend where to focus first and what I can safely leave for later.\n\n[Describe the output format you want, with an example.]"
+      },
+      {
+        "page": 7,
+        "title": "5 · Hypothesis-Driven Problem Solving",
+        "text": "[Describe the problem in detail with background context.]\n\nMy hypothesis is [what you think is causing it]. Define what evidence would confirm it and what would disprove it. Suggest how I can collect that evidence and how to read the results. If the hypothesis doesn't hold up, help me generate and test the next most likely alternatives.\n\n[Describe the output format you want, with an example.]"
+      },
+      {
+        "page": 7,
+        "title": "6 · After-Action Review",
+        "text": "[Describe what happened in detail with background context.]\n\nRun an after-action review of [project or event]. Cover: what was supposed to happen, what actually happened, and why the two differed. Then list the strengths to keep, the weaknesses to fix and three specific changes for next time. Focus on lessons, not blame.\n\n[Describe the output format you want, with an example.]"
+      },
+      {
+        "page": 8,
+        "title": "7 · Flipped Interaction",
+        "text": "[Describe the problem in detail with background context.]\n\nDon't give me a solution yet. Ask me targeted questions, one group at a time, about the details, the context and the outcome I want. Only after I've answered all your questions, combine everything into a complete, step-by-step solution tailored to my situation.\n\n[Describe the output format you want, with an example.]"
+      },
+      {
+        "page": 8,
+        "title": "8 · Cognitive Verifier",
+        "text": "[Describe the problem in detail with background context.]\n\nWhenever I ask you something, first write three extra questions whose answers would help you respond more accurately. Show them and wait for my answers. Then combine my answers into one final solution. My question: [your question]\n\n[Describe the output format you want, with an example.]"
+      },
+      {
+        "page": 9,
+        "title": "9 · Eisenhower Matrix",
+        "text": "[Describe your workload in detail with background context.]\n\nHere are my current tasks: [list tasks with deadlines]. Sort them into the Eisenhower Matrix: Urgent and Important (do now), Important not Urgent (schedule), Urgent not Important (delegate), and neither (drop). Explain each placement briefly and give me a plan for this week.\n\n[Describe the output format you want, with an example.]"
+      },
+      {
+        "page": 9,
+        "title": "10 · Kepner-Tregoe Decision Analysis",
+        "text": "[Describe the decision in detail with background context.]\n\nMy options are [option A, B, C]. Use Kepner-Tregoe. Split my criteria into Musts (non-negotiable) and Wants (nice to have): [list criteria]. Drop any option that fails a Must. Weight each Want, score every remaining option, and show the results in a table. Recommend the winner and a plan to reduce its biggest risk.\n\n[Describe the output format you want, with an example.]"
+      },
+      {
+        "page": 10,
+        "title": "11 · Cost-Benefit Analysis",
+        "text": "[Describe the decision in detail with background context.]\n\nRun a cost-benefit analysis on [the proposal] over [time period]. List direct and hidden costs, measurable and less tangible benefits, and the cost of doing nothing. Estimate the payback point where you can, flag the assumptions with the most uncertainty, and give a clear go or no-go recommendation.\n\n[Describe the output format you want, with an example.]"
+      },
+      {
+        "page": 10,
+        "title": "12 · Six Thinking Hats",
+        "text": "[Describe the decision in detail with background context.]\n\nAnalyse [the decision] using the Six Thinking Hats. White: facts and missing data. Red: gut feelings. Black: risks. Yellow: benefits. Green: creative alternatives. Blue: a summary and the next step. Keep each hat separate, then give a balanced recommendation.\n\n[Describe the output format you want, with an example.]"
+      },
+      {
+        "page": 11,
+        "title": "13 · Scenario Planning",
+        "text": "[Describe the situation in detail with background context.]\n\nBuild three scenarios for [business or project] over [time frame]: optimistic, pessimistic and realistic. For each, describe the key drivers, the assumptions behind it and a proactive strategy. Finish with the early warning signs that tell me which scenario is unfolding.\n\n[Describe the output format you want, with an example.]"
+      },
+      {
+        "page": 11,
+        "title": "14 · Ansoff Matrix Growth Strategy",
+        "text": "[Describe your business in detail with background context.]\n\nApply the Ansoff Matrix to [business] in [market]. Work through all four options: market penetration, market development, product development and diversification. For each, assess risk, resources needed and potential reward, then recommend one path with a first step.\n\n[Describe the output format you want, with an example.]"
+      },
+      {
+        "page": 12,
+        "title": "15 · First Principles Thinking",
+        "text": "[Describe the problem in detail with background context.]\n\nBreak [the problem] down to its basic components. List every assumption people usually make about it and question each one. Rebuild a solution from the ground up using only what is definitely true. Then compare your answer with the conventional approach.\n\n[Describe the output format you want, with an example.]"
+      },
+      {
+        "page": 12,
+        "title": "16 · Pre-Mortem Risk Analysis",
+        "text": "[Describe the plan in detail with background context.]\n\nImagine it's six months from now and [the initiative] has failed badly. Write the story of why it failed: list the most likely reasons, from most to least probable. For each reason, give one preventive measure or contingency plan I can put in place now.\n\n[Describe the output format you want, with an example.]"
+      },
+      {
+        "page": 13,
+        "title": "17 · Minto Pyramid Case",
+        "text": "[Describe the situation in detail with background context.]\n\nWrite my case for [recommendation] to [audience] using the Minto Pyramid Principle. Lead with the recommendation, then give three supporting arguments, each backed by evidence. End by anticipating the two strongest objections and answering them.\n\n[Describe the output format you want, with an example.]"
+      },
+      {
+        "page": 13,
+        "title": "18 · Delphi Method for Consensus",
+        "text": "[Describe the disagreement in detail with background context.]\n\nMy team disagrees on [issue]. The main views are [list views]. Summarise each position fairly. Then run a Delphi process: design anonymous rounds of questions, show how to share results between rounds, and guide the group toward consensus. Note where real disagreement remains.\n\n[Describe the output format you want, with an example.]"
+      },
+      {
+        "page": 14,
+        "title": "19 · S.M.A.R.T. Goal and Action Plan",
+        "text": "[Describe the goal in detail with background context.]\n\nTurn [the goal] into a S.M.A.R.T. goal: Specific, Measurable, Achievable, Relevant and Time-bound. Break it into milestones with dates, the metric for each, who owns it, and a contingency if a milestone slips.\n\n[Describe the output format you want, with an example.]"
+      },
+      {
+        "page": 14,
+        "title": "20 · User Journey Mapping",
+        "text": "[Describe the product and the problem with background context.]\n\nMap the journey of [type of user] through [product or service], from first contact to [end point]. At each touchpoint describe what they do, what they think and how they feel. Highlight the moments of truth where things go wrong and suggest a fix for each.\n\n[Describe the output format you want, with an example.]"
+      }
+    ]
+  },
+  {
+    "slug": "make-ai-your-personal-coach",
+    "title": "Make AI Your Personal Coach",
+    "description": "Seven prompts that make AI plan, quiz and give you honest feedback instead of just answering.",
+    "file": "make-ai-your-personal-coach.pdf",
+    "cover": "/library/covers/make-ai-your-personal-coach.jpg",
+    "tag": "Learning",
+    "added": "2026-11-28",
+    "prompts": [
+      {
+        "page": 4,
+        "title": "Build a learning plan",
+        "text": "I'm a project manager. I know basic Excel formulas but have never built a pivot table.\nGoal: build a dashboard for our monthly budget review.\nTime: 3 hours a week for 6 weeks.\n\nMake me a week-by-week plan. For each week give me one skill, one practice task using my own data, and one test I must pass before moving on."
+      },
+      {
+        "page": 5,
+        "title": "Learn the core of a topic",
+        "text": "I'm a marketing manager and new to Google Analytics 4. List the 5 ideas I'll use most at work, ranked by how often I'll need them.\n\nFor each one give me:\n- a one-line definition\n- an example from an online shop\n- the report where I'll find it\n\nThen tell me what I can safely ignore for the first month."
+      },
+      {
+        "page": 6,
+        "title": "Turn an article into a lesson",
+        "text": "Turn this article on interest rates into a 10-minute lesson for a small shop owner with a bank loan.\n\nGive me 3 key ideas in plain words, one worked example using a 50,000 euro loan, and 3 questions to check I understood. Don't show the answers until I reply."
+      },
+      {
+        "page": 7,
+        "title": "Get quizzed",
+        "text": "Quiz me on GDPR basics. I have a team training next Monday.\n\nAsk one question at a time and wait for my answer. If I get it wrong, explain in two sentences and ask me a similar question later.\n\nAt the end, tell me my 3 weakest areas."
+      },
+      {
+        "page": 8,
+        "title": "Get mentor feedback",
+        "text": "Act as a sales director who has hired 40 account executives. Review my 5-minute pitch for a payroll app.\n\nScore it 1 to 10 on clarity, proof and the ask. Then give me the top 3 changes in order of impact. Be direct. I present on Friday.\n\n[paste your pitch]"
+      },
+      {
+        "page": 9,
+        "title": "Ask a consultant for a hard decision",
+        "text": "Act as a business consultant. I'm deciding whether to hire a second designer at 48,000 euros a year or keep working with 2 freelancers.\n\nAsk me up to 5 questions before giving any advice. Then give me 3 options with cost, risk and what must be true for each to work. Finish with your pick and my first step this week."
+      },
+      {
+        "page": 10,
+        "title": "Turn any AI into a tutor",
+        "text": "Teach me like a tutor: one idea at a time, ask me a question before moving on, and never give me the answer first."
+      }
+    ]
+  },
+  {
+    "slug": "how-to-build-ai-agents-without-coding",
+    "title": "How to Build AI Agents Without Coding",
+    "description": "Seven steps to turn ChatGPT, Claude or Gemini into an agent that does real work. No code needed.",
+    "file": "how-to-build-ai-agents-without-coding.pdf",
+    "cover": "/library/covers/how-to-build-ai-agents-without-coding.jpg",
+    "tag": "AI agents",
+    "added": "2026-11-28",
+    "prompts": [
+      {
+        "page": 7,
+        "title": "Agent playbook: role, steps, limits",
+        "text": "ROLE\nYou answer sales and support emails for a small furniture shop.\n\nSTEPS\n1. Sort each email into Sales, Support or Other.\n2. Sales: suggest matching products from the catalogue.\n3. Support: look up the order in the order sheet, then draft a reply.\n\nLIMITS\nNever promise refunds or delivery dates.\nIf you are unsure, write \"Needs a human\" and stop."
+      },
+      {
+        "page": 8,
+        "title": "Agent setup",
+        "text": "Name: Inbox Agent\nInstructions: the role, steps and limits from step 4\nFiles: product catalogue, order sheet, returns policy\nConnections: Gmail on, web search off"
+      },
+      {
+        "page": 9,
+        "title": "Scheduled task",
+        "text": "Every weekday at 8 am:\nRead new emails in the shop inbox.\nSort them into Sales, Support and Other.\nDraft a reply to each one using the catalogue and order sheet.\nLeave every draft unsent and give me a 3-line summary."
+      }
+    ]
+  },
+  {
     "slug": "master-the-art-of-ai-communication",
     "title": "Master the Art of AI Communication",
     "description": "A beginner's guide to prompt engineering for ChatGPT, Claude and Gemini, with 17 copy-ready prompts and templates.",
