@@ -1,5 +1,101 @@
 [
   {
+    "slug": "master-the-art-of-ai-communication",
+    "title": "Master the Art of AI Communication",
+    "description": "A beginner's guide to prompt engineering for ChatGPT, Claude and Gemini, with 17 copy-ready prompts and templates.",
+    "file": "master-the-art-of-ai-communication.pdf",
+    "cover": "/library/covers/master-the-art-of-ai-communication.jpg",
+    "tag": "Prompt engineering",
+    "added": "2026-11-28",
+    "prompts": [
+      {
+        "page": 16,
+        "title": "Plan a 12-week content calendar",
+        "text": "<role>\nAct as a senior content marketing strategist with 8 years of experience in B2B technology companies.\n</role>\n\n<task>\nCreate a content calendar outline for our cybersecurity software company's blog.\n</task>\n\n<context>\nWe're a startup targeting small to medium businesses. Our main competitors are established players with bigger marketing budgets. We need to establish thought leadership and generate leads through valuable content.\n</context>\n\n<requirements>\n- 12 weeks of content (3 posts per week)\n- Mix of educational, thought leadership, and product-related content\n- Include content types (how-to guides, industry analysis, case studies, etc.)\n- Consider seasonal trends and industry events\n- Each entry should include: title, content type, target audience, and key message\n</requirements>\n\n<format>\nPresent as a table with columns: Week, Post Title, Content Type, Target Audience, Key Message, Notes\n</format>\n\nThink through this step by step:\n1. First, consider what topics would be most valuable for our target audience\n2. Then, plan a strategic mix of content types\n3. Finally, organize into a logical sequence that builds authority over time"
+      },
+      {
+        "page": 17,
+        "title": "Write a focused blog post",
+        "text": "Act as a content marketing specialist writing for busy professionals.\n\nWrite a 800-word blog post titled \"5 Productivity Hacks That Actually Work for Remote Workers.\"\n\nTarget audience: Remote workers who feel overwhelmed and are looking for practical solutions they can implement immediately.\n\nStructure:\n- Engaging introduction that acknowledges common productivity challenges\n- 5 specific techniques with clear explanations\n- Brief implementation guide for each technique\n- Conclusion with encouragement and next steps\n\nTone: Conversational but authoritative, empathetic to reader struggles, actionable rather than theoretical.\n\nInclude: At least one relevant statistic about remote work productivity, and ensure each technique can be implemented in under 30 minutes."
+      },
+      {
+        "page": 18,
+        "title": "Decline a proposal politely",
+        "text": "I need to write a professional email declining a business proposal while maintaining a positive relationship for future opportunities.\n\nContext: A marketing agency proposed a 6-month social media management contract for $5,000/month. While their proposal was well-crafted, it's outside our current budget and strategic focus.\n\nWrite an email that:\n- Thanks them for their detailed proposal and time invested\n- Clearly but diplomatically declines the current offer\n- Explains our decision briefly without going into excessive detail\n- Leaves the door open for future collaboration\n- Maintains a professional, respectful tone\n\nLength: 150-200 words\n\nTone: Professional, appreciative, diplomatic"
+      },
+      {
+        "page": 18,
+        "title": "Reply to an upset client",
+        "text": "I need help crafting a response to a difficult client email. Let me walk you through this step by step:\n\nFirst, analyze the situation:\n- Client is upset about a project delay\n- The delay was caused by scope changes they requested\n- They're threatening to end the contract\n- We want to resolve this professionally and keep the client\n\nThen, help me structure a response that:\n1. Acknowledges their frustration without accepting blame\n2. Explains the situation objectively\n3. Proposes a solution going forward\n4. Reaffirms our commitment to their success\n\nThink through the best approach for each element, then write a professional email response."
+      },
+      {
+        "page": 19,
+        "title": "Research a new market",
+        "text": "Act as a market research analyst specializing in mobile app markets.\n\nI'm considering launching a fitness app targeting busy professionals aged 25-40. Provide a comprehensive market analysis covering:\n\n1. Market size and growth trends for fitness apps (last 3 years)\n2. Key competitors and their positioning\n3. Main user pain points in existing solutions\n4. Emerging trends and opportunities\n5. Potential challenges for new entrants\n\nFor each section, provide:\n- Key insights with supporting data where possible\n- Implications for a new entrant\n- Specific recommendations\n\nFormat: Structured report with clear headings\n\nLength: 1000-1200 words\n\nFocus: Actionable insights rather than general information\n\nNote: I understand you may not have the most recent data, so please indicate when information might be outdated and suggest where I could find current statistics."
+      },
+      {
+        "page": 19,
+        "title": "Explain a complex topic simply",
+        "text": "I'm a small business owner with no technical background trying to understand if blockchain technology could benefit my business.\n\nExplain blockchain in simple terms by:\n\n1. Starting with a basic definition using everyday analogies\n2. Explaining how it works without technical jargon\n3. Providing 2-3 real-world examples of how businesses use it\n4. Discussing potential benefits and limitations for small businesses\n5. Giving me questions I should ask if someone proposes a blockchain solution\n\nUse analogies and examples I can relate to as a business owner. Avoid technical terms, or if you must use them, define them clearly.\n\nLength: 500-600 words\n\nTone: Educational but accessible, like a knowledgeable friend explaining something new"
+      },
+      {
+        "page": 20,
+        "title": "Generate campaign concepts",
+        "text": "Act as a creative director at an advertising agency known for innovative campaigns.\n\nI need creative concepts for launching a new eco-friendly water bottle.\n\nProduct details:\n- Made from 100% recycled materials\n- Keeps drinks cold for 24 hours, hot for 12 hours\n- Price point: $35 (premium market)\n- Target audience: Environmentally conscious millennials and Gen Z\n\nGenerate 5 distinct campaign concepts, each including:\n- Core message/tagline\n- Visual concept description\n- Primary marketing channels\n- Key differentiator from competitors\n- Potential partnerships or collaborations\n\nThink creatively about how to make environmental responsibility feel aspirational rather than preachy.\n\nFor each concept, explain why it would resonate with the target audience and how it addresses their values and lifestyle."
+      },
+      {
+        "page": 21,
+        "title": "Think through a business decision",
+        "text": "Help me think through a business decision systematically.\n\nSituation: I run a small consulting firm (5 employees) and have an opportunity to take on a large project that would double our revenue for the year. However, it would require hiring 3 temporary contractors and would consume 80% of our capacity for 6 months.\n\nWalk me through this decision by:\n\n1. Identifying all the key factors I should consider\n2. Listing potential benefits and risks\n3. Suggesting questions I should ask the client\n4. Recommending what additional information I need\n5. Proposing a framework for making this decision\n\nConsider both short-term and long-term implications for the business.\n\nThink through this step by step, and help me see angles I might not have considered."
+      },
+      {
+        "page": 21,
+        "title": "Explain tech to non-technical people",
+        "text": "I need to explain our software development process to non-technical executives who want to understand why projects take as long as they do.\n\nAct as a technical project manager who excels at communicating with business stakeholders.\n\nCreate an explanation that:\n- Uses business analogies they can relate to\n- Explains why each phase is necessary\n- Addresses common concerns about timeline and costs\n- Helps them understand how to support the development team\n- Avoids technical jargon while remaining accurate\n\nStructure it as a brief presentation outline (5-7 main points) that I could present in a 15-minute meeting.\n\nInclude suggested responses to likely questions like \"Can't we just skip the testing phase?\" or \"Why can't you just add this one small feature?\""
+      },
+      {
+        "page": 22,
+        "title": "Build a 90-day learning plan",
+        "text": "Act as a learning and development specialist.\n\nHelp me create a 90-day learning plan to become proficient in data analysis for marketing decisions.\n\nMy background:\n- Marketing manager with 5 years experience\n- Comfortable with Excel basics\n- No programming experience\n- 5-7 hours per week available for learning\n- Learn best through hands-on practice with real examples\n\nCreate a week-by-week plan that includes:\n- Specific skills to focus on each week\n- Recommended resources (free and paid options)\n- Practical exercises using marketing scenarios\n- Milestones to track progress\n- How to apply new skills to my current role\n\nPrioritize practical application over theoretical knowledge, and suggest ways to practice with real marketing data."
+      },
+      {
+        "page": 24,
+        "title": "Improve your own prompt",
+        "text": "Act as a prompt engineering expert. I'm trying to create a prompt for generating product descriptions that convert well for e-commerce.\n\nMy current prompt is: \"Write a product description for [product].\"\n\nHelp me improve this by:\n1. Identifying what's missing from my current prompt\n2. Suggesting specific elements I should add\n3. Providing a template I can use for different products\n4. Explaining why each element improves the results\n\nConsider best practices for e-commerce copywriting and conversion optimization."
+      },
+      {
+        "page": 24,
+        "title": "Solve a problem from 3 angles",
+        "text": "I need to solve a customer retention problem. Our SaaS product has a 15% monthly churn rate, and I want to reduce it to under 10%.\n\nAnalyze this problem from three different perspectives:\n\n1. As a customer success manager: What are the likely causes of churn and what interventions could help?\n\n2. As a product manager: What product improvements or features might reduce churn?\n\n3. As a data analyst: What metrics should we track and what experiments should we run to understand and address churn?\n\nAfter providing all three perspectives, synthesize them into a comprehensive action plan that addresses the most promising opportunities from each viewpoint."
+      },
+      {
+        "page": 27,
+        "title": "Analysis template",
+        "text": "ANALYSIS REQUEST TEMPLATE\n\nRole: Act as a [specific expert type] with [relevant experience]\n\nContext: [Background information about the situation]\n\nObjective: [What you want to achieve]\n\nAnalysis Framework:\n1. [First analytical dimension]\n2. [Second analytical dimension]\n3. [Third analytical dimension]\n\nOutput Requirements:\n- Format: [Specific format needed]\n- Length: [Word count or time limit]\n- Focus: [Key priorities]\n- Audience: [Who will use this analysis]\n\nConstraints: [Any limitations or requirements]"
+      },
+      {
+        "page": 27,
+        "title": "Plan for an uncertain year",
+        "text": "I'm planning our company's strategy for the next year, but there's significant uncertainty about economic conditions and our industry.\n\nHelp me think through this by:\n\n1. Identifying the key uncertainties that could affect our business\n2. Creating 3 scenarios: optimistic, realistic, and pessimistic\n3. For each scenario, suggesting strategic priorities and resource allocation\n4. Identifying decisions we can make now that would be beneficial regardless of which scenario unfolds\n5. Recommending early warning indicators to watch for each scenario\n\nStructure this as a strategic planning framework I can present to our leadership team."
+      },
+      {
+        "page": 36,
+        "title": "Research template",
+        "text": "Act as a [expert type] researching [topic] for [audience].\n\nResearch Question: [Specific question]\n\nContext: [Background information]\n\nAnalysis Framework:\n1. [First dimension]\n2. [Second dimension]\n3. [Third dimension]\n\nOutput Format: [Specific format requirements]\nLength: [Word count]\nFocus: [Key priorities]"
+      },
+      {
+        "page": 36,
+        "title": "Content creation template",
+        "text": "Create [content type] for [audience] about [topic].\n\nObjective: [What should this accomplish?]\n\nTone: [Specific tone requirements]\n\nLength: [Word count or time limit]\n\nKey Messages: [Must-include points]\n\nCall-to-Action: [What should readers do?]\n\nConstraints: [Any limitations]"
+      },
+      {
+        "page": 36,
+        "title": "Problem-solving template",
+        "text": "Help me solve [problem description].\n\nContext: [Background and constraints]\n\nApproach this by:\n1. Analyzing the root causes\n2. Generating potential solutions\n3. Evaluating pros and cons\n4. Recommending the best approach\n5. Suggesting implementation steps\n\nConsider [specific factors relevant to your situation]."
+      }
+    ]
+  },
+  {
     "slug": "7-prompts-for-your-sales-day",
     "title": "7 Prompts for Your Sales Day",
     "description": "Ready-to-use AI prompts for sales research, outreach, follow-ups and call prep.",
